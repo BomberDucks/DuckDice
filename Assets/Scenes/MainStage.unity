@@ -5298,6 +5298,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 885b88284e1bb214d8b74f867d6e5a37, type: 2}
   - {fileID: 11400000, guid: e94a071276e35e24ab07f6e990bdafba, type: 2}
   - {fileID: 11400000, guid: 9c399192bd67b1e4898b34c2becdb09d, type: 2}
+  - {fileID: 11400000, guid: b94b967bea5e4794db795bcec155b6be, type: 2}
+  - {fileID: 11400000, guid: a90de01edff1e4a46b075d2688598007, type: 2}
+  - {fileID: 11400000, guid: dbe1e725b3e9e5940acb425596a2605f, type: 2}
   CurrentLevelIndex: 0
   WallPrefab: {fileID: 7802648931951769720, guid: f438d76736f8323459f2e74b9ac69e27, type: 3}
   FloorPrefab: {fileID: 3260859505405333590, guid: 0c2f7c943fe06fc46941360361e3f0bd, type: 3}

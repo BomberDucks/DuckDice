@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
         if (direction != Vector3.zero)
         {
             //incremente mon scoremanager
-            ScoreManager.Instance.AddMove();
+            
             
             if (ModelToRotate != null) targetRotation = Quaternion.LookRotation(direction);
 
@@ -170,6 +170,7 @@ public class PlayerController : MonoBehaviour
 
         transform.position = targetPosition;
         isMoving = false;
+        ScoreManager.Instance.AddMove();
     }
 
     
@@ -180,6 +181,7 @@ public class PlayerController : MonoBehaviour
         audioSource.pitch = Random.Range(0.9f, 1.1f);
         
         audioSource.PlayOneShot(clip, volume);
+        
     }
 
     private void OnDrawGizmos()

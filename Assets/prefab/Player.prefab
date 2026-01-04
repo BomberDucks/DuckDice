@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: def1969fc8aea9f4fa15b7e0fa0fe7a5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -334,6 +334,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: 12248_Bird_v1_L2
       objectReference: {fileID: 0}
+    - target: {fileID: 3672520337449390383, guid: 72436931970969b4bb09b02a3ab2c5c4, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3672520337449390383, guid: 72436931970969b4bb09b02a3ab2c5c4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: def1969fc8aea9f4fa15b7e0fa0fe7a5, type: 2}
+    - target: {fileID: 3672520337449390383, guid: 72436931970969b4bb09b02a3ab2c5c4, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: -2090982504057144408, guid: 72436931970969b4bb09b02a3ab2c5c4, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
