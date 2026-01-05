@@ -3,8 +3,8 @@ using UnityEngine;
 [System.Serializable]
 public class DiceState
 {
-    public int TopFace = 1;      // La face du dessus (celle qui compte pour la victoire)
-    public int ForwardFace = 2;  // La face qui regarde vers le "Nord" (Haut de l'écran)
+    public int TopFace = 1;      
+    public int ForwardFace = 2;  
 
     // Constructeur
     public DiceState(int top, int forward)
@@ -13,15 +13,15 @@ public class DiceState
         ForwardFace = forward;
     }
 
-    // Fonction principale appelée quand on pousse le dé
+    
     public void Roll(Vector2Int direction)
     {
         int oldTop = TopFace;
         int oldForward = ForwardFace;
-        int oldRight = GetRightFace(oldTop, oldForward); // On calcule la face droite actuelle
+        int oldRight = GetRightFace(oldTop, oldForward); 
 
-        // --- LOGIQUE DE ROTATION ---
-        if (direction == Vector2Int.up) // Vers le NORD
+        
+        if (direction == Vector2Int.up) 
         {
             TopFace = 7 - oldForward; // Le Sud devient le dessus
             ForwardFace = oldTop;     // L'ancien dessus devient le Nord
