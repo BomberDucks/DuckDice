@@ -23,36 +23,35 @@ public class DiceState
         
         if (direction == Vector2Int.up) 
         {
-            TopFace = 7 - oldForward; // Le Sud devient le dessus
-            ForwardFace = oldTop;     // L'ancien dessus devient le Nord
+            TopFace = 7 - oldForward; 
+            ForwardFace = oldTop;     
         }
-        else if (direction == Vector2Int.down) // Vers le SUD
+        else if (direction == Vector2Int.down) 
         {
-            TopFace = oldForward;     // Le Nord devient le dessus
-            ForwardFace = 7 - oldTop; // L'ancien dessus devient le Sud (donc le Nord devient le dessous)
+            TopFace = oldForward;     
+            ForwardFace = 7 - oldTop; 
         }
-        else if (direction == Vector2Int.right) // Vers l'EST
+        else if (direction == Vector2Int.right) 
         {
-            TopFace = 7 - oldRight;   // La gauche devient le dessus
-            // Forward ne change pas quand on roule latéralement
+            TopFace = 7 - oldRight;   
+            
         }
-        else if (direction == Vector2Int.left) // Vers l'OUEST
+        else if (direction == Vector2Int.left) 
         {
-            TopFace = oldRight;       // La droite devient le dessus
-            // Forward ne change pas
+            TopFace = oldRight;       
+            
         }
 
-        // --- DEBUG LOG ---
-        // C'est ici que la console vous parlera !
+        
+        
         Debug.Log($"<color=cyan>DICE LOG :</color> Direction {direction} | Nouvelle TOP : <b>{TopFace}</b> (Front: {ForwardFace})");
     }
 
-    // Helper : Calcule la face de droite sur un dé standard
-    // Basé sur la règle : Top, Front et Right suivent un ordre cyclique précis
+    
+    
     private int GetRightFace(int top, int front)
     {
         // Table de correspondance pour un dé standard
-        // (Combinaisons possibles de Top/Front pour trouver Right)
         if (top == 1) {
             if (front == 2) return 3;
             if (front == 3) return 5;
@@ -71,13 +70,7 @@ public class DiceState
             if (front == 6) return 5;
             if (front == 5) return 1;
         }
-        // ... On peut faire toutes les faces, mais utilisons l'astuce des faces opposées :
-        // Si on ne trouve pas direct, on inverse le Top (le dé est symétrique)
         
-        // Astuce générique simplifiée pour éviter 24 conditions :
-        // Sur un dé standard : faces opposées = 7.
-        // On peut déduire les autres cas.
-        // Voici une version "Hardcodée" simplifiée qui couvre les cas principaux :
         
         return HardcodedRightFace(top, front);
     }
@@ -115,6 +108,6 @@ public class DiceState
         if (top == 6 && front == 4) return 5;
         if (top == 6 && front == 5) return 3;
 
-        return 0; // Erreur (configuration impossible)
+        return 0; 
     }
 }

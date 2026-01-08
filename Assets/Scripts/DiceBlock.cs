@@ -20,40 +20,38 @@ public class DiceBlock : MonoBehaviour
         SnapToGrid();
     }
 
-    // --- 1. ACTION DE POUSSER (ROULEMENT) ---
+    
     public bool Push(Vector3 direction)
     {
         if (isMoving) return false;
 
-        // Vérification obstacle (Raycast)
-        // On ignore les Targets (Triggers)
+        
         if (Physics.Raycast(transform.position, direction, 1f, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
         {
             return false;
         }
 
-        // On lance le ROULEMENT
+        
         StartCoroutine(Roll(direction));
         return true;
     }
 
-    // --- 2. ACTION DE TIRER (GLISSEMENT) ---
+    
     public void Pull(Vector3 direction)
     {
         if (isMoving) return;
         
-        // Pas de vérification d'obstacle ici (le joueur a déjà vérifié pour nous)
-        // On lance le GLISSEMENT
+        
         StartCoroutine(Slide(direction));
     }
 
-    // --- COROUTINE 1 : ROULER (Change les faces) ---
+    
     private IEnumerator Roll(Vector3 direction)
     {
         isMoving = true;
 
         float remainingAngle = 90f;
-        float speed = 300f; // Vitesse de rotation
+        float speed = 300f; 
 
         Vector3 rotationCenter = transform.position + (direction * 0.5f) + (Vector3.down * 0.5f);
         Vector3 rotationAxis = Vector3.Cross(Vector3.up, direction);
@@ -66,17 +64,17 @@ public class DiceBlock : MonoBehaviour
             yield return null;
         }
 
-        // Fin du mouvement
+        // Fin mouvement
         SnapToGrid();
-        SnapRotation(); // Important après une rotation
+        SnapRotation(); 
 
-        // IMPORTANT : On met à jour les faces car on a roulé !
+        
         UpdateDiceLogic(direction);
 
         FinishMove();
     }
 
-    // --- COROUTINE 2 : GLISSER (Garde les faces) ---
+    
     private IEnumerator Slide(Vector3 direction)
     {
         isMoving = true;
@@ -84,7 +82,7 @@ public class DiceBlock : MonoBehaviour
         Vector3 startPos = transform.position;
         Vector3 targetPos = startPos + direction;
         float elapsedTime = 0;
-        float slideSpeed = 5f; // Vitesse de glissade
+        float slideSpeed = 5f; 
 
         while (elapsedTime < (1f / slideSpeed))
         {
@@ -93,7 +91,7 @@ public class DiceBlock : MonoBehaviour
             yield return null;
         }
 
-        // Fin du mouvement
+        
         transform.position = targetPos;
         SnapToGrid();
 

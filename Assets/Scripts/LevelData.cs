@@ -6,7 +6,7 @@ public class LevelData : ScriptableObject
     public string LevelName;
     
     [Header("Structure du Niveau")]
-    [Tooltip("Utilisez : # pour Mur, . pour Sol, P pour Player, D pour Dé, T pour Target")]
+    [Tooltip("# pour Mur, . pour Sol, P pour Player, D pour De, T pour Target")]
     [TextArea(10, 20)] 
     public string LevelString;
 

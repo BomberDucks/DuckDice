@@ -26,13 +26,13 @@ public class TargetZone : MonoBehaviour
     // Appelée par le LevelManager lors du scan
     public void SetSolved(bool state)
     {
-        // On ne fait quelque chose QUE si l'état change (pour éviter le spam console)
+        
         if (IsSolved != state)
         {
             IsSolved = state;
             UpdateColor();
 
-            // --- AJOUT DES DEBUGS ICI ---
+            
             if (IsSolved)
             {
                 Debug.Log($"<color=green>Cible {RequiredNumber} : C'EST BON ! (Validée)</color>");
@@ -48,7 +48,6 @@ public class TargetZone : MonoBehaviour
     {
         if (ZoneRenderer != null)
         {
-            // Vert si gagné, Blanc sinon
             ZoneRenderer.material.color = IsSolved ? Color.green : Color.red;
         }
     }
